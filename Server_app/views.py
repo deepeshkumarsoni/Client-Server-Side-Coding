@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http.response import HttpResponse
 from .models import Student_Data
-from Client_app import forms
+from Client_app.forms import Student_Form
 
 def Student_View(request):
     if request.method == 'POST':
@@ -21,6 +21,8 @@ def Student_View(request):
             data.save()
             sform = Student_Form()
             return render(request,'abc.html',{'sform':sform})
+        else:
+            return request('Data is Invalid')
     else:
         sform = Student_Form()
         return render(request,'abc.html',{'sform':sform})

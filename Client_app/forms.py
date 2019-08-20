@@ -3,11 +3,11 @@ from django import forms
 class Student_Form(forms.Form):
 
     S_Name = forms.CharField(
-        label='Enter Product Name :',
+        label='Enter Your Name :',
         widget=forms.TextInput(
             attrs={
                 'class' : 'form-control',
-                'placeholder' : 'Your Product Name'
+                'placeholder' : 'Your Name'
             }
         )
     )
