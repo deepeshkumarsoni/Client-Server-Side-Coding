@@ -19,6 +19,7 @@ def Student_View(request):
                 S_Location = location
             )
             data.save()
+            return HttpResponse('Data Inserted')
             sform = Student_Form()
             return render(request,'abc.html',{'sform':sform})
         else:
