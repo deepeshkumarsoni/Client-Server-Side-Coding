@@ -5,7 +5,7 @@ from Client_app.forms import Student_Form
 
 def Student_View(request):
     if request.method == 'POST':
-        sform = (request.POST)
+        sform = Student_Form(request.POST)
         if sform.is_valid():
             name = request.POST.get('S_Name')
             rollno = request.POST.get('S_Rollno')
@@ -22,7 +22,7 @@ def Student_View(request):
             sform = Student_Form()
             return render(request,'abc.html',{'sform':sform})
         else:
-            return request('Data is Invalid')
+            return HttpResponse('Data is Invalid')
     else:
         sform = Student_Form()
         return render(request,'abc.html',{'sform':sform})
